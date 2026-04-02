@@ -1,0 +1,22 @@
+---
+type: relation_type
+id: forecast_to_mrp
+name: 预测单驱动MRP
+tags: [供需链路]
+---
+
+## RelationType: 预测单驱动MRP
+
+通过根需求单号将预测单与 MRP 精确关联。
+
+### Endpoint
+
+| Source | Target | Type |
+|--------|--------|------|
+| forecast | mrp_plan_order | direct |
+
+### Mapping Rules
+
+| Source Property | Target Property |
+|-----------------|-----------------|
+| billno | rootdemandbillno |

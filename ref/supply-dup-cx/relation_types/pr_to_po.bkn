@@ -1,0 +1,22 @@
+---
+type: relation_type
+id: pr_to_po
+name: PR下推PO
+tags: [采购链路]
+---
+
+## RelationType: PR下推PO
+
+采购申请下推生成采购订单。
+
+### Endpoint
+
+| Source | Target | Type |
+|--------|--------|------|
+| pr | po | direct |
+
+### Mapping Rules
+
+| Source Property | Target Property |
+|-----------------|-----------------|
+| pr_id | srcbillid |

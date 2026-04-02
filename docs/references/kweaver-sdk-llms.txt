@@ -1,0 +1,45 @@
+KWeaver SDK — LLM Context Reference
+======================================
+
+Package: @kweaver-ai/kweaver-sdk
+Install: npm install -g @kweaver-ai/kweaver-sdk (or pnpm add @kweaver-ai/kweaver-sdk)
+Requires: Node.js 22+
+
+This project uses the KWeaver SDK for ALL backend interactions with the KWeaver platform.
+The SDK provides a CLI (`kweaver`) and can be invoked programmatically.
+
+Authentication:
+- Credentials stored in ~/.kweaver/
+- Auto-refreshes tokens via OAuth2 refresh_token
+- Never store passwords in the app
+- Environment overrides: KWEAVER_TOKEN, KWEAVER_BASE_URL
+
+Key commands used by BKN Studio:
+
+  Auth:
+    kweaver auth login <url>
+    kweaver token (prints current access token)
+
+  Config:
+    kweaver config show
+    kweaver config set-bd <uuid>
+
+  BKN:
+    kweaver bkn object-type list --kn-id <id>
+    kweaver bkn object-type query --kn-id <id> --object-type <type> --condition '...'
+    kweaver bkn search --kn-id <id> -q "query"
+    kweaver bkn action execute --kn-id <id> --action <name> --params '...'
+
+  Agent:
+    kweaver agent list
+    kweaver agent chat <agent-id> -m "message"
+
+  Data Sources:
+    kweaver ds list
+    kweaver ds import-csv <file> --name <name>
+
+  Generic API:
+    kweaver call <url> [-X POST] [-d '...']
+
+For full reference, run: kweaver --help
+See also: kweaver-core skill at ~/.agents/skills/kweaver-core/

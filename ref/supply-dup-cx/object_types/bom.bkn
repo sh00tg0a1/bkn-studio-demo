@@ -1,0 +1,33 @@
+---
+type: object_type
+id: bom
+name: 产品BOM
+tags: [BOM, 结构]
+---
+
+## ObjectType: 产品BOM
+
+产品结构对象，承载父子件关系与替代组规则。主料判定采用 alt_priority=0，并按 bom_version 使用最新版本。
+
+### Data Properties
+
+| Name | Display Name | Type | Description | Mapped Field |
+|------|--------------|------|-------------|--------------|
+| bom_material_code | 产品编码 | string | BOM 所属产品编码 | bom_material_code |
+| parent_material_code | 父件编码 | string | 上级物料编码 | parent_material_code |
+| material_code | 子件编码 | string | 下级物料编码 | material_code |
+| bom_version | BOM版本 | string | BOM 版本号，取最新版本 | bom_version |
+| alt_group_no | 替代组号 | string | 同父件下替代分组标识 | alt_group_no |
+| alt_priority | 替代优先级 | integer | 0=主料，>0=替代料 | alt_priority |
+
+### Keys
+
+Primary Keys: bom_material_code, parent_material_code, material_code, bom_version
+Display Key: material_code
+Incremental Key:
+
+### Data Source
+
+| Type | ID | Name |
+|------|-----|------|
+| data_view | 9bd77928-c3e1-4b03-8ca4-50ca7a7cd625 | bom_event |

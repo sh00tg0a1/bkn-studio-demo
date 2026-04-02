@@ -1,0 +1,156 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --font-sans: var(--font-noto-sc), var(--font-fira-sans), ui-sans-serif, system-ui,
+    sans-serif;
+  --font-mono: var(--font-fira-code), ui-monospace, monospace;
+}
+
+/* BKN Studio: professional B2B SaaS — blue primary, cool-neutral surfaces (light default). */
+:root {
+  color-scheme: light;
+  --radius: 0.5rem;
+  --background: oklch(0.985 0.004 264);
+  --foreground: oklch(0.274 0.022 264);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.274 0.022 264);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.274 0.022 264);
+  --primary: oklch(0.488 0.215 264);
+  --primary-foreground: oklch(0.995 0 0);
+  --secondary: oklch(0.955 0.02 264);
+  --secondary-foreground: oklch(0.32 0.04 264);
+  --muted: oklch(0.965 0.008 264);
+  --muted-foreground: oklch(0.45 0.02 264);
+  --accent: oklch(0.94 0.03 264);
+  --accent-foreground: oklch(0.32 0.05 264);
+  --destructive: oklch(0.55 0.22 25);
+  --border: oklch(0.91 0.01 264);
+  --input: oklch(0.91 0.01 264);
+  --ring: oklch(0.488 0.215 264);
+  --sidebar: oklch(0.978 0.006 264);
+  --sidebar-foreground: oklch(0.274 0.022 264);
+  --sidebar-border: oklch(0.9 0.012 264);
+}
+
+.dark {
+  color-scheme: dark;
+  --background: oklch(0.19 0.025 264);
+  --foreground: oklch(0.96 0.01 264);
+  --card: oklch(0.235 0.03 264);
+  --card-foreground: oklch(0.96 0.01 264);
+  --popover: oklch(0.235 0.03 264);
+  --popover-foreground: oklch(0.96 0.01 264);
+  --primary: oklch(0.62 0.18 264);
+  --primary-foreground: oklch(0.995 0 0);
+  --secondary: oklch(0.3 0.04 264);
+  --secondary-foreground: oklch(0.96 0.01 264);
+  --muted: oklch(0.28 0.03 264);
+  --muted-foreground: oklch(0.72 0.02 264);
+  --accent: oklch(0.32 0.05 264);
+  --accent-foreground: oklch(0.96 0.01 264);
+  --destructive: oklch(0.65 0.2 22);
+  --border: oklch(0.38 0.03 264);
+  --input: oklch(0.35 0.03 264);
+  --ring: oklch(0.62 0.18 264);
+  --sidebar: oklch(0.22 0.028 264);
+  --sidebar-foreground: oklch(0.93 0.015 264);
+  --sidebar-border: oklch(0.34 0.03 264);
+}
+
+.skip-link {
+  position: absolute;
+  left: 0.75rem;
+  top: 0.75rem;
+  z-index: 200;
+  transform: translateY(-120%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .skip-link {
+    transition: none;
+  }
+}
+
+/* Tool block: horizontal shimmer while tool is executing */
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes bkn-tool-running-shimmer {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(200%);
+    }
+  }
+
+  .bkn-tool-running-shimmer {
+    animation: bkn-tool-running-shimmer 2.2s ease-in-out infinite;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+  body {
+    @apply bg-background text-foreground text-base leading-relaxed antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection {
+    @apply bg-primary/20 text-foreground;
+  }
+  .dark ::selection {
+    @apply bg-primary/30;
+  }
+}

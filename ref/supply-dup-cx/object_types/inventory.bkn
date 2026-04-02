@@ -1,0 +1,33 @@
+---
+type: object_type
+id: inventory
+name: 库存
+tags: [库存]
+---
+
+## ObjectType: 库存
+
+库存对象，记录物料库存与仓库维度库存快照，支持齐套判定与到料跟踪。
+
+### Data Properties
+
+| Name | Display Name | Type | Description | Mapped Field |
+|------|--------------|------|-------------|--------------|
+| material_code | 物料编码 | string | 关联物料编码 | item_code |
+| inventory_qty | 库存数量 | decimal | 总库存数量 | quantity |
+| available_inventory_qty | 可用库存数量 | decimal | 当前可用于计划判断的库存量 | quantity |
+| inbound_date | 入库日期 | string | 最近入库日期 | earliest_storage_date |
+| warehouse | 仓库 | string | 仓库名称 | warehouse_name |
+| warehouse_id | 仓库ID | string | 仓库标识 | warehouse_id |
+
+### Keys
+
+Primary Keys: material_code, warehouse_id
+Display Key: material_code
+Incremental Key:
+
+### Data Source
+
+| Type | ID | Name |
+|------|-----|------|
+| data_view | 4bebeb86-838b-478c-b51a-b5f81041042d | inventory_event |

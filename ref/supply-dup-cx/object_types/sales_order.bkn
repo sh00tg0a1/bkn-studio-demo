@@ -1,0 +1,32 @@
+---
+type: object_type
+id: sales_order
+name: 销售订单
+tags: [订单, 销售]
+---
+
+## ObjectType: 销售订单
+
+销售订单对象，表达客户签约与交付承诺，对预测和计划协同起需求参考作用。
+
+### Data Properties
+
+| Name | Display Name | Type | Description | Mapped Field |
+|------|--------------|------|-------------|--------------|
+| order_no | 订单号 | string | 销售订单编号 | sales_order_number |
+| product_code | 产品编码 | string | 关联产品编码 | product_code |
+| contract_qty | 签约数量 | decimal | 合同签约数量 | quantity |
+| promise_delivery_date | 承诺交期 | string | 承诺交付日期 | planned_delivery_date |
+| customer_name | 客户名称 | string | 客户显示名称 | customer_name |
+
+### Keys
+
+Primary Keys: order_no
+Display Key: order_no
+Incremental Key:
+
+### Data Source
+
+| Type | ID | Name |
+|------|-----|------|
+| data_view | 151d93dc-109d-4e71-a035-c13799ac2c23 | sales_order_event |

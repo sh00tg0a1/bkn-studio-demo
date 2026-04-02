@@ -1,0 +1,22 @@
+---
+type: relation_type
+id: bom_to_material
+name: BOM引用物料
+tags: [结构链路]
+---
+
+## RelationType: BOM引用物料
+
+BOM 子件编码关联物料主数据。
+
+### Endpoint
+
+| Source | Target | Type |
+|--------|--------|------|
+| bom | material | direct |
+
+### Mapping Rules
+
+| Source Property | Target Property |
+|-----------------|-----------------|
+| material_code | material_code |

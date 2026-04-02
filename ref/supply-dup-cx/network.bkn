@@ -1,0 +1,40 @@
+---
+type: knowledge_network
+id: supply-dup-cx
+name: 供应链计划协同知识网络-副本
+tags: [产品运营, 供应链, 计划协同]
+branch: main
+business_domain: bd_public
+---
+
+# 供应链计划协同知识网络-副本
+
+以产品需求预测单为核心，构建预测单→MRP→PR→PO→库存的计划协同业务知识网络，支撑产品运营业务域中的计划监控与采购协同分析。
+
+## Network Overview
+
+- **ObjectTypes** (object_types/):
+  - bom
+  - forecast
+  - inventory
+  - material
+  - mrp_plan_order
+  - po
+  - pr
+  - product
+  - sales_order
+  - d773imrrc6debr2st2v0
+  - supplier
+- **RelationTypes** (relation_types/):
+  - bom_to_material
+  - forecast_to_mrp
+  - mrp_to_inventory
+  - mrp_to_pr
+  - po_to_supplier
+  - pr_to_po
+  - product_to_bom
+  - product_to_forecast
+  - sales_order_to_product
+- **ConceptGroups** (concept_groups/):
+  - demand_to_supply_trace
+  - procurement_execution

@@ -1,0 +1,32 @@
+---
+type: object_type
+id: product
+name: 产品
+tags: [主数据, 产品]
+---
+
+## ObjectType: 产品
+
+产品主数据对象，用于承载产品编码、名称等基础信息，并作为预测、销售订单与 BOM 的关联锚点。
+
+### Data Properties
+
+| Name | Display Name | Type | Description | Mapped Field |
+|------|--------------|------|-------------|--------------|
+| material_number | 产品编码 | string | 产品唯一编码 | product_code |
+| material_name | 产品名称 | string | 产品显示名称 | product_name |
+| product_id | 产品ID | string | 产品内部ID | product_id |
+| product_type | 产品类型 | string | 产品分类 | product_type |
+| status | 状态 | string | 数据状态 | status |
+
+### Keys
+
+Primary Keys: material_number
+Display Key: material_name
+Incremental Key:
+
+### Data Source
+
+| Type | ID | Name |
+|------|-----|------|
+| data_view | ee5a1824-1c65-444d-9910-a5fac50efef2 | product_entity |

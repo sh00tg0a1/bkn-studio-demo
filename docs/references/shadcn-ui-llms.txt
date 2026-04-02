@@ -1,0 +1,33 @@
+shadcn/ui — LLM Context Reference
+====================================
+
+UI component library used by BKN Studio.
+Not an npm package — components are copied into the project via CLI.
+
+Setup:
+  pnpm dlx shadcn@latest init
+  pnpm dlx shadcn@latest add button dialog input scroll-area separator tabs
+
+Key components used:
+- Button — primary actions, icon buttons
+- Dialog — confirmation modals (workspace delete, etc.)
+- Input — chat input, workspace name input
+- ScrollArea — chat message list, file lists
+- Separator — visual dividers
+- Tabs — workspace sections (resources, artifacts)
+- DropdownMenu — context menus on files
+- Sheet — mobile sidebar overlay
+- Tooltip — icon button labels
+
+Conventions:
+- All components in src/components/ui/
+- Use Tailwind CSS classes for customization
+- Follow shadcn naming: lowercase-kebab (e.g. scroll-area.tsx)
+- Import from @/components/ui/<component>
+
+Theming:
+- CSS variables in globals.css
+- Dark mode via class strategy (next-themes)
+- Primary colors: configurable per workspace (future)
+
+Refer to: https://ui.shadcn.com

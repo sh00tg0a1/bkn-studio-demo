@@ -1,0 +1,32 @@
+---
+type: object_type
+id: supplier
+name: 供应商
+tags: [主数据, 采购]
+---
+
+## ObjectType: 供应商
+
+供应商主数据对象，用于承接 PO 的供方信息和协同管理。
+
+### Data Properties
+
+| Name | Display Name | Type | Description | Mapped Field |
+|------|--------------|------|-------------|--------------|
+| supplier_id | 供应商ID | string | 供应商内部ID | supplier_id |
+| supplier_code | 供应商编码 | string | 供应商业务编码 | supplier_code |
+| supplier_name | 供应商名称 | string | 供应商显示名称 | supplier_name |
+| supplier_tier | 供应商层级 | string | 战略/核心/一般 | supplier_tier |
+| status | 状态 | string | 数据状态 | status |
+
+### Keys
+
+Primary Keys: supplier_id
+Display Key: supplier_name
+Incremental Key:
+
+### Data Source
+
+| Type | ID | Name |
+|------|-----|------|
+| data_view | fb73cf60-a17c-404e-9af5-603377c32512 | supplier_entity |

@@ -1,0 +1,22 @@
+---
+type: relation_type
+id: mrp_to_pr
+name: MRP下推PR
+tags: [采购链路]
+---
+
+## RelationType: MRP下推PR
+
+MRP 计划订单通过来源单据号关联采购申请。
+
+### Endpoint
+
+| Source | Target | Type |
+|--------|--------|------|
+| mrp_plan_order | pr | direct |
+
+### Mapping Rules
+
+| Source Property | Target Property |
+|-----------------|-----------------|
+| billno | srcbillid |

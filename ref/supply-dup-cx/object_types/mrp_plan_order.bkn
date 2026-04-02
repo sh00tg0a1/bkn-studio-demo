@@ -1,0 +1,35 @@
+---
+type: object_type
+id: mrp_plan_order
+name: 物料需求计划订单
+tags: [MRP, 计划订单]
+---
+
+## ObjectType: 物料需求计划订单
+
+由 MRP 运算生成的计划订单对象，承接预测单并下游驱动 PR/PO/库存协同。业务上优先使用 bizorderqty 作为实际需求。
+
+### Data Properties
+
+| Name | Display Name | Type | Description | Mapped Field |
+|------|--------------|------|-------------|--------------|
+| billno | MRP单号 | string | MRP 计划订单单据编号 | billno |
+| rootdemandbillno | 根需求单号 | string | 关联预测单 billno | rootdemandbillno |
+| materialplanid_number | 物料编码 | string | 需求物料编码 | materialplanid_number |
+| materialattr_title | 物料属性 | string | 外购/委外/自制 | materialattr_title |
+| bizorderqty | 业务修正需求量 | decimal | PMC 修正后的需求量，优先值 | bizorderqty |
+| adviseorderqty | 建议订单量 | decimal | MRP 建议需求量，后备值 | adviseorderqty |
+| closestatus_title | 关闭状态 | string | A/正常保留，其余关闭 | closestatus_title |
+| dropstatus_title | 投放状态 | string | 未投放/已投放 | dropstatus_title |
+
+### Keys
+
+Primary Keys: billno
+Display Key: billno
+Incremental Key:
+
+### Data Source
+
+| Type | ID | Name |
+|------|-----|------|
+| data_view | 7eb93fee-de8e-4ace-a1da-be5da7325a32 | mrp_plan_order_event |

@@ -1,0 +1,34 @@
+---
+type: object_type
+id: forecast
+name: 产品需求预测单
+tags: [需求, 预测]
+---
+
+## ObjectType: 产品需求预测单
+
+计划协同核心对象，按产品+预测单据维度记录需求起止时间与数量，是 MRP 展开与后续采购、生产协同的起点。
+
+### Data Properties
+
+| Name | Display Name | Type | Description | Mapped Field |
+|------|--------------|------|-------------|--------------|
+| billno | 预测单号 | string | 预测业务单据编号 | billno |
+| material_number | 产品编码 | string | 关联产品编码 | material_number |
+| startdate | 需求开始时间 | string | 预测交货开始日期 | startdate |
+| enddate | 需求截止时间 | string | 预测交货结束日期 | enddate |
+| qty | 需求数量 | decimal | 预测数量 | qty |
+| sales_order_number | 销售订单号 | string | 关联销售订单 | sales_order_number |
+| project_name | 项目名称 | string | 项目维度标识 | project_name |
+
+### Keys
+
+Primary Keys: billno, material_number
+Display Key: billno
+Incremental Key:
+
+### Data Source
+
+| Type | ID | Name |
+|------|-----|------|
+| data_view | 453b867e-9865-4477-9eea-042ae6238f65 | forecast_event |

@@ -1,0 +1,36 @@
+---
+type: object_type
+id: po
+name: 采购订单
+tags: [PO, 采购]
+---
+
+## ObjectType: 采购订单
+
+采购订单对象，承接 PR 下推形成，并关联供应商与计划到货日期，用于采购进度与到料监控。
+
+### Data Properties
+
+| Name | Display Name | Type | Description | Mapped Field |
+|------|--------------|------|-------------|--------------|
+| material_name | 物料名称 | string | - | material_name |
+| billno | PO单号 | string | 采购订单编号 | purchase_order_number |
+| po_id | PO主键 | string | 采购订单主键 | purchase_order_id |
+| srcbillid | 来源单据号 | string | 关联 PR 主键或来源单号 | srcbillid |
+| srcbillentryid | 来源分录号 | string | 关联 PR 分录ID | srcbillentryid |
+| material_number | 物料编码 | string | 采购物料编码 | material_code |
+| supplier_id | 供应商ID | string | 供应商标识 | supplier_id |
+| deliverdate | 计划到货日期 | string | 预期交货时间 | planned_arrival_date |
+| biztime | 业务时间 | string | 业务发生时间 | document_date |
+
+### Keys
+
+Primary Keys: po_id
+Display Key: billno
+Incremental Key:
+
+### Data Source
+
+| Type | ID | Name |
+|------|-----|------|
+| data_view | d9bf1295-8335-4d7a-87c0-ca878c7ef6a4 | purchase_order_event |

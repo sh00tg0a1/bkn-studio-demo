@@ -1,0 +1,32 @@
+---
+type: object_type
+id: d773imrrc6debr2st2v0
+name: skill
+tags: [Agent, Skill]
+comment: Agent Skills 对象，记录 PMC 智能问答的计算逻辑技能定义及其与知识网络的绑定关系。
+---
+
+# skill
+
+### Data Properties
+
+| Name | Display Name | Type | Comment |
+|------|-------------|------|---------|
+| skill_id | Skill ID | string | Skill 唯一标识 |
+| name | 名称 | string | 显示名称 |
+| description | 描述 | string | 简要描述 |
+| kn_id | 关联知识网络 | string | 关联知识网络 ID |
+| related_object_types | 涉及对象类 | string | 涉及的对象类 (逗号分隔) |
+| related_relations | 涉及关系类 | string | 涉及的关系类 (逗号分隔) |
+| path | Skill 路径 | string | SKILL.md 本地文件路径 |
+
+### Keys
+
+Primary Keys: skill_id
+Display Key: name
+
+### Data Source
+
+| type | id | name |
+|------|-----|------|
+| data_view | 5a77c4b9-513b-4ba4-a47d-6cfdf9b8bb4f | v2_skill |

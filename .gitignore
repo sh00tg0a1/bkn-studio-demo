@@ -1,0 +1,43 @@
+# dependencies
+node_modules
+.pnp
+.pnp.js
+
+# next
+.next/
+out/
+
+# env
+.env
+.env.local
+.env*.local
+
+# debug
+npm-debug.log*
+pnpm-debug.log*
+
+# IDE
+.idea
+.vscode
+
+# python venv (repo has scripts)
+.venv/
+
+# OS
+.DS_Store
+
+# vitest
+coverage/
+
+# local tool noise
+*.tsbuildinfo
+pnpm-exit.txt
+tsc-code.txt
+tsc-out.txt
+vitest-out.txt
+
+# playwright / e2e studio fixture
+e2e/.studio/
+playwright-report/
+test-results/
+

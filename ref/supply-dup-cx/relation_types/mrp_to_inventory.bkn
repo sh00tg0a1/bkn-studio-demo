@@ -1,0 +1,22 @@
+---
+type: relation_type
+id: mrp_to_inventory
+name: MRP关联库存
+tags: [库存链路]
+---
+
+## RelationType: MRP关联库存
+
+MRP 物料编码关联库存记录。
+
+### Endpoint
+
+| Source | Target | Type |
+|--------|--------|------|
+| mrp_plan_order | inventory | direct |
+
+### Mapping Rules
+
+| Source Property | Target Property |
+|-----------------|-----------------|
+| materialplanid_number | material_code |

@@ -1,0 +1,31 @@
+Next.js 15 — LLM Context Reference
+====================================
+
+Stack: Next.js 15 with App Router, React 19, TypeScript 5
+
+Key conventions for this project:
+- App Router only (no pages/ directory)
+- Server Components by default; "use client" only for interactive components
+- API routes in src/app/api/ using Route Handlers (export async function GET/POST)
+- Streaming responses via ReadableStream for SSE (Server-Sent Events)
+- Tailwind CSS 4 for styling
+- pnpm as package manager
+
+File routing:
+- src/app/layout.tsx — root layout
+- src/app/page.tsx — root page (redirect to workspace)
+- src/app/workspace/[name]/page.tsx — main studio view
+- src/app/api/chat/route.ts — chat endpoint
+- src/app/api/workspace/route.ts — workspace CRUD
+- src/app/api/workspace/[name]/resources/route.ts — resource upload/list
+- src/app/api/workspace/[name]/artifacts/route.ts — artifact list/read
+
+Server Actions vs Route Handlers:
+- Use Route Handlers for streaming (chat) and file upload (multipart)
+- Server Actions acceptable for simple mutations (workspace create/delete)
+
+Data fetching:
+- Server Components fetch data directly (no useEffect)
+- Client Components use SWR or fetch in useEffect for dynamic data
+
+Refer to: https://nextjs.org/docs
